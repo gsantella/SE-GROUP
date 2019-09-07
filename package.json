@@ -1,0 +1,26 @@
+{
+  "name": "se-group",
+  "version": "1.0.0",
+  "description": "Group Project Practice",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsantella/SE-GROUP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsantella/SE-GROUP/issues"
+  },
+  "homepage": "https://github.com/gsantella/SE-GROUP#readme"
+}

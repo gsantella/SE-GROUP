@@ -5,3 +5,8 @@ let fahrenheitToCelsius = (temp) => {
 let celsiusToFahrenheit = (temp) => {
     return 888;
 }
+
+module.exports = {
+    fahrenheitToCelsius,
+    celsiusToFahrenheit
+}
