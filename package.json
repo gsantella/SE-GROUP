@@ -11,7 +11,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "@now/static"
   },
   "repository": {
     "type": "git",
