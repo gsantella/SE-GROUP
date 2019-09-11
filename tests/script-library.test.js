@@ -29,6 +29,6 @@ describe('All averageThreeNumbers', () => {
   test('averageThreeNumbers', () => { 
     expect(libJonathan.averageThreeNumbers(1,2,3)).toBe(2);
     expect(libJason.averageThreeNumbers(1,2,3)).toBe(3);
-    expect(libWinter.averageThreeNumbers(1,2,3)).toBe(3);
+    expect(libWinter.averageThreeNumbers(1,2,3)).toBe(2);
   });
 });
