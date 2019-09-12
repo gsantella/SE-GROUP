@@ -18,17 +18,32 @@ describe('Original Tests', () => {
 });
 
 describe('All addTwoNumbers', () => {
-  test('addTwoNumbers', () => { 
+  
+  test('addTwoNumbers Jonathan', () => { 
     expect(libJonathan.addTwoNumbers(1,2)).toBe(3);
+  });
+
+  test('addTwoNumbers Jason', () => { 
     expect(libJason.addTwoNumbers(1,2)).toBe(3);
+  });
+
+  test('addTwoNumbers Winter', () => { 
     expect(libWinter.addTwoNumbers(1,2)).toBe(3);
   });
+
 });
 
 describe('All averageThreeNumbers', () => {
-  test('averageThreeNumbers', () => { 
+  test('averageThreeNumbers Jonathan', () => { 
     expect(libJonathan.averageThreeNumbers(1,2,3)).toBe(2);
-    expect(libJason.averageThreeNumbers(1,2,3)).toBe(3);
+  });
+
+  test('averageThreeNumbers Jason', () => { 
+    expect(libJason.averageThreeNumbers(1,2,3)).toBe(2);
+  });
+  
+  test('averageThreeNumbers Winter', () => { 
     expect(libWinter.averageThreeNumbers(1,2,3)).toBe(2);
   });
+
 });
