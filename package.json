@@ -11,8 +11,15 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "./build.sh"
   },
+  "builds": [
+    {
+      "src": "*",
+      "use": "@now/static-build"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gsantella/SE-GROUP.git"
