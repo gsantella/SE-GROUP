@@ -5,15 +5,15 @@ const libWinter = require('../src/js/winter.js');
 
 describe('Original Tests', () => {
   test('CToF', () => {
-    expect(lib.celsiusToFahrenheit(100)).toBe(888);
+    expect(lib.celsiusToFahrenheit(100)).toBe(212);
   });
 
   test('FtoC1', () => {
-    expect(lib.fahrenheitToCelsius(212)).toBe(999);
+    expect(lib.fahrenheitToCelsius(212)).toBe(100);
   });
 
   test('FtoC2', () => {
-    expect(lib.fahrenheitToCelsius(32)).toBe(999);
+    expect(lib.fahrenheitToCelsius(32)).toBe(0);
   });
 });
 
