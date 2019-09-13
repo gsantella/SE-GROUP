@@ -2,8 +2,7 @@
     "name": "se-group",
     "version": 2,
     "builds": [
-        { "src": "*.html", "use": "@now/static" },
-        { "src": "*.js", "use": "@now/static" }
+        { "src": "package.json", "use": "@now/static-build" }
       ],
     "regions": ["cle1"]
 }
