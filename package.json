@@ -9,7 +9,12 @@
   "dependencies": {
     "jest": "^24.9.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
   "scripts": {
     "test": "jest",
     "build": "bash build.sh"
