@@ -4,14 +4,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const data = {
-  status: 'success',
-};
+// const data = {
+//  status: 'success',
+// };
 
 // routes
 app.get('/', (req, res) => res.send('Hello World!'));
 app.get('/api', (req, res) => res.json(data));
 app.get('/temp', (req, res) => {
+  const data = {};
   if (req.query.f) {
     const { f } = req.query;
     const c = (f - 32) * (5 / 9);
@@ -19,6 +20,7 @@ app.get('/temp', (req, res) => {
     data.result = c;
   } else {
     data.status = 'fail';
+    // delete data.result;
   }
   res.json(data);
 });

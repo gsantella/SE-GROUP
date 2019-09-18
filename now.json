@@ -7,6 +7,7 @@
     ],
     "routes": [
       { "src": "/api", "dest": "src/backend/server.js" },
+      { "src": "/temp", "dest": "src/backend/server.js" },
       { "src": "/(.*)", "dest": "frontend/$1" }
     ],
     "regions": ["cle1"]
