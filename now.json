@@ -2,11 +2,11 @@
     "name": "se-group",
     "version": 2,
     "builds": [
-      { "src": "package.json", "use": "@now/static-build" },
-      { "src": "src/backend/*.js", "use": "@now/node" }
+      { "src": "src/backend/server.js", "use": "@now/node" },
+      { "src": "package.json", "use": "@now/static-build" }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "backend/$1" },
+      { "src": "/api", "dest": "src/backend/server.js" },
       { "src": "/(.*)", "dest": "frontend/$1" }
     ],
     "regions": ["cle1"]

@@ -8,6 +8,6 @@ const data = {
 };
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/dog', (req, res) => res.json(data));
+app.get('/api', (req, res) => res.json(data));
 
 app.listen(port);
