@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "jest": "^24.9.0"
   },
   "devDependencies": {
@@ -17,7 +18,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "bash build.sh"
+    "build": "bash build.sh",
+    "serve": "node src/backend/server.js"
   },
   "repository": {
     "type": "git",
