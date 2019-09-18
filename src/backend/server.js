@@ -10,7 +10,7 @@ const port = 3000;
 
 // routes
 app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/api', (req, res) => res.json(data));
+app.get('/api', (req, res) => res.json({ status: 'success' }));
 app.get('/temp', (req, res) => {
   const data = {};
   if (req.query.f) {
