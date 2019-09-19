@@ -1,12 +1,7 @@
-// import express from 'express';
 const express = require('express');
 
 const app = express();
 const port = 3000;
-
-// const data = {
-//  status: 'success',
-// };
 
 // routes
 app.get('/', (req, res) => res.send('Hello World!'));
@@ -20,7 +15,6 @@ app.get('/temp', (req, res) => {
     data.result = c;
   } else {
     data.status = 'fail';
-    // delete data.result;
   }
   res.json(data);
 });
