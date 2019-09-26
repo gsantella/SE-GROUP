@@ -8,9 +8,10 @@ const port = 3000;
 
 // routes
 app.get('/data/get', (req, res) => {
-  const db = sqlite.Database('./emailerDb.sqlite');
+  const db = new sqlite.Database('./emailerDb.sqlite');
 
-  db.all("SELECT * FROM names WHERE start < date(now)", (err, rows) => {
+  // not working! should not be showing any results
+  db.all("SELECT * FROM emails WHERE date > DATE('now')", (err, rows) => {
     res.json(rows);
   });
 
