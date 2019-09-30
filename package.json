@@ -7,6 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect": "^3.7.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jest": "^24.9.0",

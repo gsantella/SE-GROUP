@@ -5,17 +5,21 @@ const sqlite = require('sqlite3');
 
 const app = express();
 const port = 3000;
+const today = new Date();
+const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
-const db = sqlite.Database('./emailerDb.sqlite');
+const db = new sqlite.Database('./emailerDb.sqlite');
 
-app.get('/data/post', (req, res) => {
+app.post('/data', (req, res) => {
     const data = {};
     data.status = 'success';
-    data.name = ;
-    data.email = ;
-    data.msg = ;
-    //insomnia rest insomnia.rest
-    res.json(data);
+    data.name = req.query.name;
+    data.email = req.query.email;
+    data.msg = req.query.msg;
+    data.date = date;
+    const sql = 'INSERT INTO emails(name, email, msg, date) VALUES(data.name, data.email, data.msg, data.date)';
+    db.run(sql);
+    res.json(data.succes);
   });
 
 app.use(cors());
