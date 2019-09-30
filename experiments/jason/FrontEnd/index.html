@@ -3,13 +3,16 @@
     <title>PHP Test</title>
     <link rel="stylesheet" href="../css/materialize.css">
     <link rel="stylesheet" href="../css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style type="text/css">
     textarea {
       resize: none;
       height:250px;
   }
+  /*body {
+    background-image: url("./css/jake-weirick-EsvpmQ4zp5Y-unsplash.jpg")
+  }*/
   </style>
   </head>
   <body>
@@ -43,7 +46,7 @@
               <input type="email" id="email" placeholder="Your E-Mail" name="email" required>
           </div>
           <div class="col s3">
-            <input type="date" id="expirationDate" class="datepicker" placeholder="Enter the expiration date"><!-- Set default date and fix the date picker -->
+            <input type="text" class="datepicker">
         </div>
           <div class="col s1"></div>
           <div class="col s6">
@@ -57,5 +60,12 @@
       </form>
     </div>
     <script src="js/script.js"></script>
+    <script>
+      const Calendar = document.querySelector('.datepicker');
+      M.Datepicker.init(Calendar,{
+        
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
