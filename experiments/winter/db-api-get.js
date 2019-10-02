@@ -13,7 +13,7 @@ const port = 3000;
 app.get('/data', (req, res) => {
   const db = new sqlite.Database('./emailerDb.sqlite');
 
-  db.all("SELECT * FROM emails WHERE DATE('now') < emails.date;", (err, rows) => {
+  db.all("SELECT * FROM emails WHERE emails.date > strftime('%s', date);", (err, rows) => {
     res.json(rows);
   });
 
