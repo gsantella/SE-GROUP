@@ -1,19 +1,38 @@
+/* eslint-disable no-console */
+const request = require('request');
 const mailgun = require('mailgun-js');
 const settings = require('./api.js');
 
-const DOMAIN = 'sandbox2c45fa8a8587484f9dafc00d51afb0f5.mailgun.org';
-const mg = mailgun({ apiKey: settings.mailGunKey, domain: DOMAIN });
-const data = {
-  from: 'Jonathan Svitana <jonathansvitana@gmail.com>',
-  to: 'jonathansvitana@gmail.com',
-  subject: 'Hello',
-  text: 'Testing some Mailgun awesomness!',
-};
-mg.messages().send(data, (error, body) => {
-  console.log(body);
+// Separate API call from MailGun call
+const hostname = 'https://api.myjson.com/bins/1gpwqd';
+let name = '';
+let email = 'this';
+let message = '';
+const date = '';
+
+function mailGun() {
+  const DOMAIN = 'sandbox2c45fa8a8587484f9dafc00d51afb0f5.mailgun.org';
+  const mg = mailgun({ apiKey: settings.mailGunKey, domain: DOMAIN });
+  const data = {
+    from: 'Jonathan Svitana <jonathansvitana@gmail.com>',
+    to: email,
+    subject: name,
+    text: message,
+  };
+  mg.messages().send(data, (error, body) => {
+    console.log(body);
+  });
+}
+
+// !!!!!!!!!!!!!!!!!!!make mailgun call after the request
+request.get(hostname, (error, response, body) => {
+  // get json
+  const json = JSON.parse(body);
+
+  // set variables to the json objects
+  name = json.name;
+  email = json.email;
+  message = json.Message;
+
+  mailGun();
 });
-
-// You can see a record of this email in your logs: https://app.mailgun.com/app/logs.
-
-// You can send up to 300 emails/day from this sandbox server.
-// Next, you should add your own domain so you can send 10000 emails/month for free.
