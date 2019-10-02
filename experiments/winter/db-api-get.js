@@ -1,5 +1,6 @@
 /* eslint-disable quotes */
 /* eslint-disable indent */
+
 const express = require('express');
 const cors = require('cors');
 const sqlite = require('sqlite3');
@@ -8,7 +9,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const jsonParser = bodyParser.json();
 const port = 3000;
-
 const db = new sqlite.Database('./emailerDb.sqlite');
 
 // routes
@@ -42,5 +42,4 @@ app.post('/data', jsonParser, (req, res) => {
   });
 
 app.use(cors());
-// app.use(bodyParser.json());
 app.listen(port);
