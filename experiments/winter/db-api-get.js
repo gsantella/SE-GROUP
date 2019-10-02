@@ -2,8 +2,10 @@
 const express = require('express');
 const cors = require('cors');
 const sqlite = require('sqlite3');
+const bodyParser = require('body-parser');
 
 const app = express();
+const jsonParser = bodyParser.json();
 const port = 3000;
 
 
@@ -11,8 +13,7 @@ const port = 3000;
 app.get('/data', (req, res) => {
   const db = new sqlite.Database('./emailerDb.sqlite');
 
-  // not working! should not be showing any results
-  db.all("SELECT * FROM emails", (err, rows) => {
+  db.all("SELECT * FROM emails WHERE emails.date > strftime('%s', date);", (err, rows) => {
     res.json(rows);
   });
 
@@ -20,23 +21,25 @@ app.get('/data', (req, res) => {
 });
 
 /* eslint-disable indent */
-const today = new Date();
-const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
 
 const db = new sqlite.Database('./emailerDb.sqlite');
 
-app.post('/data', express.json, (req, res) => {
+app.post('/data', jsonParser, (req, res) => {
     const data = {};
-    data.status = 'success';
-    data.name = req.body.name;
+    data.fName = req.body.fName;
+    data.lName = req.body.lName;
     data.email = req.body.email;
     data.msg = req.body.msg;
-    data.date = date;
-    const sql = 'INSERT INTO emails(name, email, msg, date) VALUES(data.name, data.email, data.msg, data.date)';
+    data.date = req.body.expirationDate;
+    data.recieverName = req.body.recieverName;
+    data.recieverEmail = req.body.recieverEmail;
+    const sql = `INSERT INTO emails(fName, lName, email, msg, date, recieverName, recieverEmail) VALUES('${data.fName}', '${data.lName}', '${data.email}', '${data.msg}', '${data.date}', '${data.recieverName}', '${data.recieverEmail}')`;
     db.run(sql);
-    res.json(data.succes);
+    res.json(data);
   });
 
 app.use(cors());
 
+// app.use(bodyParser.json());
 app.listen(port);
