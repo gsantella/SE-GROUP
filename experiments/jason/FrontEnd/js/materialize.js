@@ -8740,10 +8740,10 @@ case 'x':
     parse: null,
 
     // The initial date to view when first opened
-    defaultDate: null,
+    defaultDate: dateToday,
 
     // Make the `defaultDate` the initial selected value
-    setDefaultDate: false,
+    setDefaultDate: true,
 
     disableWeekends: false,
 
