@@ -4,9 +4,12 @@ const mailgun = require('mailgun-js');
 const settings = require('./api.js');
 
 // Separate API call from MailGun call
-const hostname = 'https://api.myjson.com/bins/1gpwqd';
-let name = '';
-let email = 'this';
+const hostname = 'http://127.0.0.1:3000/data';
+const fName = 'this';
+const lName = '';
+const senderEmail = '';
+const recieverEmail = '';
+const recieverName = '';
 let message = '';
 const date = '';
 
@@ -24,15 +27,19 @@ function mailGun() {
   });
 }
 
-// !!!!!!!!!!!!!!!!!!!make mailgun call after the request
 request.get(hostname, (error, response, body) => {
   // get json
   const json = JSON.parse(body);
 
   // set variables to the json objects
-  name = json.name;
-  email = json.email;
-  message = json.Message;
+  fName = json.fName;
+  lName = json.lNmae;
+  senderEmail = json.email;
+  recieverEmail = json.recieverEmail;
+  recieverName = json.recieverName;
+  message = json.msg;
+  date = json.date;
 
-  mailGun();
+  console.log(fname);
+  // mailGun();
 });
