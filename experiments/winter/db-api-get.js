@@ -13,8 +13,10 @@ const db = new sqlite.Database('./emailerDb.sqlite');
 
 // routes
 app.get('/data', (req, res) => {
+  const json = {};
   db.all("SELECT * FROM emails WHERE emails.date > strftime('%s', date);", (err, rows) => {
-    res.json(rows);
+    json.data = rows;
+    res.json(json);
   });
 
   db.close();
