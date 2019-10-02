@@ -35,8 +35,15 @@ app.post('/data', jsonParser, (req, res) => {
     data.recieverName = req.body.recieverName;
     data.recieverEmail = req.body.recieverEmail;
     const sql = `INSERT INTO emails(fName, lName, email, msg, date, recieverName, recieverEmail) VALUES('${data.fName}', '${data.lName}', '${data.email}', '${data.msg}', '${data.date}', '${data.recieverName}', '${data.recieverEmail}')`;
-    db.run(sql);
+    db.run(sql, (err) => {
+      if (err) {
+          data.status = "fail";
+      } else {
+        data.status = "success";
+      }
+    });
     res.json(data);
+    db.close();
   });
 
 app.use(cors());
