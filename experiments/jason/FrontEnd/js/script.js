@@ -1,6 +1,6 @@
 
 document.getElementById('autoEmailer').addEventListener('click', () => {
-  const url = 'https://api.myjson.com/bins';
+  const url = 'https://api.myjson.co/bins';
   const data = {};
   data.recieverName = document.getElementById('recieverName').value;
   data.recieverEmail = document.getElementById('recieverEmail').value;
@@ -9,7 +9,6 @@ document.getElementById('autoEmailer').addEventListener('click', () => {
   data.lName = document.getElementById('lName').value;
   data.email = document.getElementById('email').value;
   data.msg = document.getElementById('msg').value;
-  console.log(data);
   async function sendData() {
     try {
       const response = await fetch(url, {
@@ -20,9 +19,10 @@ document.getElementById('autoEmailer').addEventListener('click', () => {
         },
       });
       const json = await response.json();
+      M.toast({ html: 'Successfully set up Auto Eamiler!' });
       console.log('Success:', JSON.stringify(json));
     } catch (error) {
-      console.error('Error:', error);
+      M.toast({ html: 'Something went wrong )=' });
     }
   }
   sendData();
