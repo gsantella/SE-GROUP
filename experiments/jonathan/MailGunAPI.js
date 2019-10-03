@@ -14,13 +14,13 @@ let message = '';
 let date = '';
 
 function mailGun() {
-  const DOMAIN = 'sandbox2c45fa8a8587484f9dafc00d51afb0f5.mailgun.org';
+  const DOMAIN = 'rm103.xyz';
   const mg = mailgun({ apiKey: settings.mailGunKey, domain: DOMAIN });
   const data = {
-    from: 'Jonathan Svitana <jonathansvitana@gmail.com>',
-    to: recieverEmail,
+    from: senderEmail,
+    to: 'jsvitana@yahoo.com',
     subject: recieverName,
-    text: message,
+    text: `From : ${fName} ${lName} At: ${date}\n${message}`,
   };
   mg.messages().send(data, (error, body) => {
     console.log(body);
@@ -32,14 +32,14 @@ request.get(hostname, (error, response, body) => {
   const json = JSON.parse(body);
 
   // set variables to the json objects
-  fName = json.fName;
-  lName = json.lName;
-  senderEmail = json.email;
-  recieverEmail = json.recieverEmail;
-  recieverName = json.recieverName;
-  message = json.msg;
-  date = json.date;
+  fName = json.data[3].fName;
+  lName = json.data[3].lName;
+  senderEmail = json.data[3].email;
+  recieverEmail = json.data[3].recieverEmail;
+  recieverName = json.data[3].recieverName;
+  message = json.data[3].msg;
+  date = json.data[3].date;
 
   console.log(fName);
-  // mailGun();
+  mailGun();
 });
