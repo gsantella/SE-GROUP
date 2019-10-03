@@ -9,20 +9,21 @@ const bodyParser = require('body-parser');
 const app = express();
 const jsonParser = bodyParser.json();
 const port = 3000;
-const db = new sqlite.Database('./emailerDb.sqlite');
+
 
 // routes
 app.get('/data', (req, res) => {
+  const db = new sqlite.Database('./emailerDb.sqlite');
   const json = {};
   db.all("SELECT * FROM emails WHERE emails.date > strftime('%s', date);", (err, rows) => {
     json.data = rows;
     res.json(json);
   });
-
   db.close();
 });
 
 app.post('/data', jsonParser, (req, res) => {
+    const db = new sqlite.Database('./emailerDb.sqlite');
     const data = {};
     data.fName = req.body.fName;
     data.lName = req.body.lName;
