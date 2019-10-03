@@ -8863,6 +8863,9 @@ input[type=range]::-ms-thumb {
   .datepicker-day-button {
     line-height: 44px;
   }
+  .datepicker{
+    color: #A7ACA2;
+  }
 }
 
 /* Timepicker Containers */
