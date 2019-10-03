@@ -2382,6 +2382,10 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */
+  color: pink;
+}
+#autoEmailer{
+  color:black;
 }
 
 /**
