@@ -5,21 +5,21 @@ const settings = require('./api.js');
 
 // Separate API call from MailGun call
 const hostname = 'http://127.0.0.1:3000/data';
-const fName = 'this';
-const lName = '';
-const senderEmail = '';
-const recieverEmail = '';
-const recieverName = '';
+let fName = '';
+let lName = '';
+let senderEmail = '';
+let recieverEmail = '';
+let recieverName = '';
 let message = '';
-const date = '';
+let date = '';
 
 function mailGun() {
   const DOMAIN = 'sandbox2c45fa8a8587484f9dafc00d51afb0f5.mailgun.org';
   const mg = mailgun({ apiKey: settings.mailGunKey, domain: DOMAIN });
   const data = {
     from: 'Jonathan Svitana <jonathansvitana@gmail.com>',
-    to: email,
-    subject: name,
+    to: recieverEmail,
+    subject: recieverName,
     text: message,
   };
   mg.messages().send(data, (error, body) => {
@@ -33,13 +33,13 @@ request.get(hostname, (error, response, body) => {
 
   // set variables to the json objects
   fName = json.fName;
-  lName = json.lNmae;
+  lName = json.lName;
   senderEmail = json.email;
   recieverEmail = json.recieverEmail;
   recieverName = json.recieverName;
   message = json.msg;
   date = json.date;
 
-  console.log(fname);
+  console.log(fName);
   // mailGun();
 });
