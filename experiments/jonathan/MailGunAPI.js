@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-console */
 const request = require('request');
 const mailgun = require('mailgun-js');
@@ -18,9 +19,9 @@ function mailGun() {
   const mg = mailgun({ apiKey: settings.mailGunKey, domain: DOMAIN });
   const data = {
     from: senderEmail,
-    to: 'jsvitana@yahoo.com',
+    to: recieverEmail,
     subject: recieverName,
-    text: `From : ${fName} ${lName} At: ${date}\n${message}`,
+    text: `From : ${fName} ${lName}\nAt: ${date}\n${message}`,
   };
   mg.messages().send(data, (error, body) => {
     console.log(body);
@@ -31,15 +32,16 @@ request.get(hostname, (error, response, body) => {
   // get json
   const json = JSON.parse(body);
 
-  // set variables to the json objects
-  fName = json.data[3].fName;
-  lName = json.data[3].lName;
-  senderEmail = json.data[3].email;
-  recieverEmail = json.data[3].recieverEmail;
-  recieverName = json.data[3].recieverName;
-  message = json.data[3].msg;
-  date = json.data[3].date;
+  for (let i = 0; i < json.data.length; i++) {
+    // set variables to the json objects
+    fName = json.data[i].fName;
+    lName = json.data[i].lName;
+    senderEmail = json.data[i].email;
+    recieverEmail = json.data[i].recieverEmail;
+    recieverName = json.data[i].recieverName;
+    message = json.data[i].msg;
+    date = json.data[i].date;
 
-  console.log(fName);
-  mailGun();
+    mailGun();
+  }
 });
