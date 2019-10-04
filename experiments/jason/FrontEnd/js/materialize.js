@@ -12373,14 +12373,3 @@ case 'x':
   Range.init($('input[type=range]'));
 }(cash, M.anime));
 
-$(document).ready(function () {
-  var date = new Date();
-  var currentMonth = date.getMonth();
-  var currentDate = date.getDate();
-  var currentYear = date.getFullYear();
-
-  $('#expirationDate').datepicker({
-      minDate: new Date(currentYear, currentMonth, currentDate),
-      dateFormat: 'yy-mm-dd'
-  });
-});
