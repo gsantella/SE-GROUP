@@ -12,8 +12,8 @@ document.getElementById('autoEmailer').addEventListener('click', () => {
   async function sendData() {
     try {
       const response = await fetch(url, {
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
+        method: 'POST',
+        body: JSON.stringify(data),
         headers: {
           'Content-Type': 'application/json',
         },
