@@ -1,10 +1,8 @@
 <html>
   <head>
     <title>PHP Test</title>
-    <link rel="stylesheet" href="./css/materialize.css">
     <link rel="stylesheet" href="./css/materialize.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
     <style type="text/css">
     textarea {
       resize: none;
@@ -63,21 +61,17 @@
       </form>
     </div>
     <script src="js/script.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function() {
-      const options = {
-        format: 'yyyy-mm-dd',
-      };
-      var elems = document.querySelectorAll('.datepicker');
-      var instances = M.Datepicker.init(elems, options);
-      var instance = instances[0];
-      instance.setDate( new Date() );
-      instance._finishSelection();
-<<<<<<< HEAD
-    })</script>
-=======
-    })
-    </script>
->>>>>>> bcfee8ab4f5dec56b6cac3ff3a1cef76b0a7dc21
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script>document.addEventListener('DOMContentLoaded', function() {
+        const options = {
+          format: 'yyyy-mm-dd',
+        };
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems, options);
+        var instance = instances[0];
+        instance.setDate( new Date() );
+        instance._finishSelection();
+      })
+      </script>
+    <script src="js/materialize.min.js"></script>
   </body>
 </html>
