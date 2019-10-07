@@ -20,10 +20,23 @@ document.getElementById('autoEmailer').addEventListener('click', () => {
       });
       const json = await response.json();
       M.toast({ html: 'Successfully set up Auto Eamiler!' });
-      console.log('Success:', JSON.stringify(json));
     } catch (error) {
       M.toast({ html: 'Something went wrong )=' });
     }
   }
   sendData();
 });
+
+/*
+$(document).ready(() => {
+  var date = new Date();
+  var currentMonth = date.getMonth();
+  var currentDate = date.getDate();
+  var currentYear = date.getFullYear();
+
+  $('#expirationDate').datepicker({
+      minDate: new Date(currentYear, currentMonth, currentDate),
+      dateFormat: 'yy-mm-dd'
+  });
+});
+*/
