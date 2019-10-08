@@ -1,8 +1,9 @@
 <html>
   <head>
     <title>Auto E-mailer</title>
-    <link rel="stylesheet" href="./css/materialize.css">
     <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    
     <style type="text/css">
     textarea {
       resize: none;
@@ -29,6 +30,7 @@
             <label for="fName"></label>
             <input type="text" id="fName" placeholder="Your First name" name="fName" required>
           </div>
+          <div class="col s2"></div>
           <div class="col s3">
             <label for="recieverEmail"></label>
             <input type="text" id="recieverEmail" placeholder="Recipient E-mail" name="recieverEmail" required>
@@ -38,6 +40,7 @@
             <label for="lName"></label>
             <input type="text" id="lName" placeholder="Your Last name" name="lName" required>
           </div>
+          <div class="col s2"></div>
           <div class="col s3">
               <span style="color:#A7ACA2">Use the area below to enter the expiration date.(yyyy-mm-dd)</span>
           </div>
@@ -46,6 +49,8 @@
               <label for="email"></label>
               <input type="email" id="email" placeholder="Your E-Mail" name="email" required>
           </div>
+          <div class="col s2"></div>
+          <div class="col s12"></div>
           <div class="col s3">
             <input type="text" class="datepicker" id="expirationDate">
         </div>
@@ -54,6 +59,7 @@
               <label for="message"></label>
               <textarea type="text" style="width: 100%; height: 50%;" id="msg" placeholder="Type your message here" name="msg" required></textarea>
           </div>
+          <div class="col s2"></div>
         </div>
         <div style="text-align:center">
         <input id="autoEmailer" type="Submit" value="Create auto e-mailer">
