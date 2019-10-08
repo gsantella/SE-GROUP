@@ -1,6 +1,16 @@
 #blankspace{
-    opacity: 0.0;
-  }
-  .datepicker{
-    color: #A7ACA2;
-  }
+  opacity: 0.0;
+}
+
+.datepicker{
+  color: #A7ACA2;
+}
+
+textarea {
+    resize: none;
+    height:250px;
+}
+
+body {
+  background-image: url("./img/background.jpg")
+}
