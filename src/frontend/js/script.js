@@ -26,17 +26,3 @@ document.getElementById('autoEmailer').addEventListener('click', () => {
   }
   sendData();
 });
-
-/*
-$(document).ready(() => {
-  var date = new Date();
-  var currentMonth = date.getMonth();
-  var currentDate = date.getDate();
-  var currentYear = date.getFullYear();
-
-  $('#expirationDate').datepicker({
-      minDate: new Date(currentYear, currentMonth, currentDate),
-      dateFormat: 'yy-mm-dd'
-  });
-});
-*/
