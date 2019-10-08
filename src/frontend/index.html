@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       <div class="col s12">
-        <h2><font id="blankspace">.........</font><font color="#A7ACA2">Welcome to the Auto E-mailer!</font></h2>
+        <h2><span style="color:#A7ACA2">Welcome to the Auto E-mailer!</span></h2>
       </div>
       <form action="" method="post"></form>
         <div class="row">
@@ -39,7 +39,7 @@
             <input type="text" id="lName" placeholder="Your Last name" name="lName" required>
           </div>
           <div class="col s3">
-            <font color="#A7ACA2">Use the area below to enter the expiration date.(yyyy-mm-dd)</font>
+              <span style="color:#A7ACA2">Use the area below to enter the expiration date.(yyyy-mm-dd)</span>
           </div>
           <div class="col s1"></div>
           <div class="col s6">
@@ -61,17 +61,17 @@
       </form>
     </div>
     <script src="js/script.js"></script>
-      <script>document.addEventListener('DOMContentLoaded', function() {
-        const options = {
-          format: 'yyyy-mm-dd',
-        };
-          var elems = document.querySelectorAll('.datepicker');
-          var instances = M.Datepicker.init(elems, options);
-          var instance = instances[0];
-          instance.setDate( new Date() );
-          instance._finishSelection();
-        })
-      </script>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+      const options = {
+        format: 'yyyy-mm-dd',
+      };
+      var elems = document.querySelectorAll('.datepicker');
+      var instances = M.Datepicker.init(elems, options);
+      var instance = instances[0];
+      instance.setDate( new Date() );
+      instance._finishSelection();
+    })
+    </script>
     <script src="js/materialize.min.js"></script>
   </body>
 </html>

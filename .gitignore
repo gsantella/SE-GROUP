@@ -1,5 +1,5 @@
 node_modules
 public
-db.sqlite
+emailerDb.sqlite
 experiments/jonathan/api.js
 src/backend/secrets.js
